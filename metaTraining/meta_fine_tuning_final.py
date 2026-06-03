@@ -23,8 +23,8 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 # CONFIG
 # =========================
 N_WAY = 5
-K_SHOT = 2
-IS_PERSONAL = True
+K_SHOT = 1
+IS_PERSONAL = False
 
 
 if IS_PERSONAL:
@@ -43,7 +43,7 @@ def set_bn_eval(m):
         m.eval()
 
 # =========================
-# COSINE CLASSIFIER
+# COSINE CLASSIFIER 
 # =========================
 class CosineClassifier(nn.Module):
     def __init__(self, num_classes, in_features, scale=5.0):
